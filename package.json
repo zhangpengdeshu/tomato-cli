@@ -2,9 +2,12 @@
   "name": "tomato-cli",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bin/tomato-cli.js",
+  "bin": {
+    "tomato-cli": "bin/tomato-cli.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,16 @@
   "bugs": {
     "url": "https://github.com/zhangpengdeshu/tomato-cli/issues"
   },
-  "homepage": "https://github.com/zhangpengdeshu/tomato-cli#readme"
+  "homepage": "https://github.com/zhangpengdeshu/tomato-cli#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.1",
+    "@commitlint/config-conventional": "^17.0.0",
+    "commander": "^9.2.0",
+    "husky": "^8.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  }
 }
